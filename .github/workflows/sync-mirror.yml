@@ -6,7 +6,7 @@ on:
     paths:
       - 'x86_64/**'
       - 'key.asc'
-
+  workflow_dispatch: 
 jobs:
   sync:
     runs-on: ubuntu-latest
