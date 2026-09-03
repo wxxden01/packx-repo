@@ -28,7 +28,7 @@ jobs:
           git rm -rf . 2>/dev/null || true
           
           # Copier uniquement les fichiers nécessaires depuis main
-          git checkout main -- x86_64/ key.asc
+          git checkout main -- x86_64/ packx_public-key.asc
           
           # Commit et push
           git add .
