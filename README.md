@@ -9,6 +9,7 @@ Dépot officielle du gestionnaire de paquet `packx` ! <br>
 Vous pouvez également setup votre propre miroir facilement.
 
 ## Cloner le projet sur son propre miroir:
+Multiplier les miroir permet de faire de le redondance pour la haute disponibilité des ressources!
 
 ``` bash
 # Cloner UNIQUEMENT la branche mirror! (propre, sans README...)
