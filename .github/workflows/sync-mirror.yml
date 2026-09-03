@@ -1,0 +1,36 @@
+name: Sync Mirror Branch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'x86_64/**'
+      - 'key.asc'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      
+      - name: Sync to mirror branch
+        run: |
+          git config user.name "wxxden01"
+          git config user.email "rudy0017@icloud.com"
+          
+          # Checkout ou créer la branche mirror
+          git checkout mirror 2>/dev/null || git checkout --orphan mirror
+          
+          # Supprimer tout sauf .git
+          git rm -rf . 2>/dev/null || true
+          
+          # Copier uniquement les fichiers nécessaires depuis main
+          git checkout main -- x86_64/ key.asc
+          
+          # Commit et push
+          git add .
+          git commit -m "Auto-sync from main [skip ci]" || exit 0
+          git push origin mirror
