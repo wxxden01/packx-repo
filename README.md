@@ -9,14 +9,13 @@ Dépot officielle du gestionnaire de paquet `packx` ! <br>
 Vous pouvez également setup votre propre miroir facilement.
 
 ## Cloner le projet sur son propre miroir:
-Multiplier les miroir permet de faire de le redondance pour la haute disponibilité des ressources!
+Multiplier les miroir permet de faire de la redondance pour la haute disponibilité des ressources!
 
 ``` bash
 # Cloner UNIQUEMENT la branche mirror! (propre, sans README...)
-git clone --branch mirror --single-branch https://github.com/wxxden01/packx-repo.git /var/www/mirror
+git clone --branch mirror --single-branch https://github.com/wxxden01/packx-repo.git
 
 # Mettre à jour
-cd /var/www/mirror
 git pull
 
 ```
